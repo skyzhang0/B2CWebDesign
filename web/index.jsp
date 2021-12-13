@@ -1,16 +1,21 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: qwe22
-  Date: 2021/9/27
-  Time: 22:30
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>牛刀小试</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+<%@ include file="header.jsp"%>
+
+<div id="main">
+    <%@ include file="siderbar.jsp"%>
+    <div id="content">
+        <h1>欢迎来到“牛刀小试”网站~~~</h1>
+    </div>
+</div>
+
+<%@ include file="footer.jsp"%>
+
+</body>
 </html>

@@ -7,6 +7,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="B2C Web Design" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/mysql-connector-java-8.0.27.jar" />
+        </element>
       </element>
     </root>
   </artifact>
