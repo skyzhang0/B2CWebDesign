@@ -1,9 +1,0 @@
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (1, 'Add', '2021-12-13 18:03:48', 1, 1, null, 'Administrator');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (2, 'Add', '2021-12-13 18:33:08', 1, 2, null, 'Seller');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (3, 'Add', '2021-12-13 18:34:21', 1, 3, null, 'StoreKeeper');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (4, 'Add', '2021-12-13 18:35:01', 1, 4, null, 'Buyer');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (5, 'Add', '2021-12-13 18:35:35', 1, 5, null, 'Inspector');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (6, 'Add', '2021-12-13 20:58:49', 1, 6, null, 'Seller');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (7, 'Delete', '2021-12-13 20:56:33', 1, 6, 'Seller', 'Deleted');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (8, 'Add', '2021-12-13 21:04:20', 1, 7, null, 'Seller');
-INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (9, 'ChAuthority', '2021-12-13 21:04:22', 1, 7, 'Seller', 'Buyer');

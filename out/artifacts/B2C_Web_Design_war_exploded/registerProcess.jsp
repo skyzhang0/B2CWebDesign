@@ -1,8 +1,8 @@
 <%@ page import="java.net.*" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="DAO.CustomerDAO" %>
-<%@ page import="Instance.Customer" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="DAO.UserDAO" %>
+<%@ page import="Objs.User" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Title</title>
@@ -19,13 +19,11 @@
         String gender = request.getParameter("gender");
         String area = request.getParameter("area");
 
-        Customer cus = new Customer();
+        User cus = new User();
         cus.setName(name);
-        cus.setPwd(pwd);
-        cus.setGender(gender);
-        cus.setArea(area);
+        cus.setPassword(pwd);
 
-        if (CustomerDAO.insertCustomerInfo(cus) != 0) {
+        if (UserDAO.insertUserInfo(cus) != 0) {
             session.setAttribute("customer", cus);
             response.sendRedirect("index.jsp");
         } else {
