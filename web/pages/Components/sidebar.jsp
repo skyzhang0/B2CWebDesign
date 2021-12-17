@@ -5,7 +5,7 @@
   Time: 13:43
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!-- 侧边栏组件 -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- 左上角小标题 -->
@@ -17,7 +17,7 @@
 
   <!-- 侧边栏 -->
   <div class="sidebar">
-    <!-- Sidebar user panel (optional) -->
+    <!-- 用户头像栏 -->
     <!-- 此处应有jsp -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
@@ -29,13 +29,13 @@
       </div>
     </div>
 
-    <!-- Sidebar Menu -->
+    <!-- 侧边栏总菜单 -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
+          <a href="${pageContext.request.contextPath}/index.jsp" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Starter Pages
@@ -68,7 +68,7 @@
         </li>
       </ul>
     </nav>
-    <!-- /.sidebar-menu -->
+    <!-- 侧边栏总菜单 -->
   </div>
-  <!-- /.sidebar -->
+  <!-- 侧边栏 -->
 </aside>

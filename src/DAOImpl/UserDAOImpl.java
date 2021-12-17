@@ -1,15 +1,14 @@
 package DAOImpl;
 
 import DAO.UserDAO;
-import Entity.*;
-import Utils.*;
+import Entity.User.User;
 
 import java.sql.*;
 import java.util.List;
 import java.util.Vector;
 
 public class UserDAOImpl implements UserDAO {
-    private Connection conn; // 数据库连接
+    private final Connection conn; // 数据库连接
     private PreparedStatement ppstmt; // 资源句柄
 
     // 构造函数，由DAOProxy调用，conn传入DBConnection返回的数据库连接
@@ -24,7 +23,6 @@ public class UserDAOImpl implements UserDAO {
         ppstmt.setInt(1, number);
         ResultSet rs = ppstmt.executeQuery();
         User user = null;
-        boolean success = false;
         if (rs.next()) { // Uno为主键，rs.length()为0，或 1
             user = new User(rs);
         }
@@ -32,8 +30,21 @@ public class UserDAOImpl implements UserDAO {
         return user;
     }
 
+    public User findByName(String name) throws SQLException {
+        String sql = "SELECT * FROM `jxc manage system`.userinfo_t WHERE Uname = ?";
+        ppstmt = conn.prepareStatement(sql);
+        ppstmt.setString(1, name);
+        ResultSet rs = ppstmt.executeQuery();
+        User user = null;
+        if (rs.next()) {
+            user = new User(rs);
+        }
+        ppstmt.close();
+        return user;
+    }
+
     public List<User> findAll() throws SQLException {
-        List<User> res = new Vector<User>();
+        List<User> res = new Vector<>();
         String sql = "SELECT * FROM `jxc manage system`.userinfo_t";
         ppstmt = conn.prepareStatement(sql);
         ResultSet rs = ppstmt.executeQuery();
@@ -87,8 +98,8 @@ public class UserDAOImpl implements UserDAO {
         ppstmt.setString(3, user.getPassword());
         ppstmt.setString(4, user.getType());
         ppstmt.setString(5, user.getPhone());
-        ppstmt.setDate(6, (Date) user.getRegister_date());
-        ppstmt.setDate(7, (Date) user.getCancellation_date());
+        ppstmt.setDate(6, user.getRegister_date());
+        ppstmt.setDate(7, user.getCancellation_date());
         boolean state = true;
         try {
             ppstmt.executeUpdate();

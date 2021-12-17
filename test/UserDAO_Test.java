@@ -1,7 +1,7 @@
 import DAOImpl.UserDAOImpl;
 import DBConnection.DatabaseConnection;
 import DBConnection.MysqlConnection;
-import Entity.User;
+import Entity.User.User;
 import Utils.*;
 
 import java.sql.SQLException;

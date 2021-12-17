@@ -1,8 +1,8 @@
-package Entity;
+package Entity.User;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
 
 public class User {
     private int number; // 用户号码

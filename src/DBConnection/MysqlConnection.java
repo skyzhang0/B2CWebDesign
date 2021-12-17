@@ -1,6 +1,8 @@
 package DBConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class MysqlConnection implements DatabaseConnection {
     private static final String db_driver = "com.mysql.cj.jdbc.Driver";

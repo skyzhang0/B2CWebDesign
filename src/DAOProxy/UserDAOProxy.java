@@ -1,9 +1,9 @@
 package DAOProxy;
 
-import DAO.*;
+import DAO.UserDAO;
 import DAOImpl.UserDAOImpl;
 import DBConnection.MysqlConnection;
-import Entity.User;
+import Entity.User.User;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -21,6 +21,11 @@ public class UserDAOProxy implements UserDAO {
     @Override
     public User findByNumber(int number) throws SQLException {
         return userDAO.findByNumber(number);
+    }
+
+    @Override
+    public User findByName(String name) throws SQLException {
+        return userDAO.findByName(name);
     }
 
     @Override
