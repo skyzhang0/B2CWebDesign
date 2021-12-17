@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class MysqlConnection implements DatabaseConnection {
     private static final String db_driver = "com.mysql.cj.jdbc.Driver";
-    private static final String db_url = "jdbc:mysql://localhost:3306/jxc manage system?unicode=true&characterEncoding=UTF-8";
+    private static final String db_url = "jdbc:mysql://localhost:3306?unicode=true&characterEncoding=UTF-8";
     private static final String db_user = "root";
     private static final String db_pwd = "12345678";
 

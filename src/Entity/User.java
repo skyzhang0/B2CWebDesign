@@ -35,6 +35,16 @@ public class User {
         this.cancellation_date = cancellation_date;
     }
 
+    public User(User user) {
+        this.number = user.number;
+        this.name = user.name;
+        this.password = user.password;
+        this.type = user.type;
+        this.phone = user.phone;
+        this.register_date = user.register_date;
+        this.cancellation_date = user.cancellation_date;
+    }
+
     // 通过SQL查询结果构造User类
     public User(ResultSet rs) throws SQLException {
         setNumber(rs.getInt("Uno"));
@@ -48,15 +58,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-               "number=" + number +
-               ", name='" + name + '\'' +
-               ", password='" + password + '\'' +
-               ", type='" + type + '\'' +
-               ", phone='" + phone + '\'' +
-               ", register_date=" + register_date +
-               ", cancellation_date=" + cancellation_date +
-               '}';
+        return "User{" + "number=" + number + ", name='" + name + '\'' + ", password='" + password + '\'' + ", type='" + type + '\'' + ", phone='" + phone + '\'' + ", register_date=" + register_date + ", cancellation_date=" + cancellation_date + '}';
     }
 
     public String getName() {

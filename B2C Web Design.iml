@@ -20,7 +20,6 @@
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/web/plugins" />
       <excludeFolder url="file://$MODULE_DIR$/web/build" />
-      <excludeFolder url="file://$MODULE_DIR$/web/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

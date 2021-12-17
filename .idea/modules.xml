@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/B2C Web Design.iml" filepath="$PROJECT_DIR$/B2C Web Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SQL Scripts/SQL Scripts.iml" filepath="$PROJECT_DIR$/SQL Scripts/SQL Scripts.iml" />
     </modules>
   </component>
 </project>
