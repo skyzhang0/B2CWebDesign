@@ -27,20 +27,20 @@ create table `jxc manage system`.user_changebackup_t
     BeforeType   varchar(50)        null comment '变更前职工类型',
     AfterType    varchar(50)        not null comment '变更后职工类型',
     constraint User_changeBackup_T_userinfo_t_Uno_fk_1
-        foreign key (Creator_Uno) references userinfo_t (Uno),
+        foreign key (Creator_Uno) references user_info_t (Uno),
     constraint User_changeBackup_T_userinfo_t_Uno_fk_2
-        foreign key (Involved_Uno) references userinfo_t (Uno)
+        foreign key (Involved_Uno) references user_info_t (Uno)
 )
     comment '人员变更记录表';
 
 -- From File: Insert_userinfo.sql
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (1, 'Administrator', '12345678', 'Administrator', '1234678910', '2021-12-13 18:03:48', null);
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (2, 'seller', '123', 'Seller', '4585646', '2021-12-13 18:33:08', null);
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (3, 'storekeeper', '456', 'StoreKeeper', '5415634', '2021-12-13 18:34:21', null);
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (4, 'buyer', '789', 'Buyer', '54541', '2021-12-13 18:35:01', null);
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (5, 'inspector', '101112', 'Inspector', '515158', '2021-12-13 18:35:35', null);
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (6, 'test_del', '544864', 'Deleted', '5546', '2021-12-13 20:58:49', '2021-12-13 20:58:53');
-INSERT INTO `jxc manage system`.userinfo_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (7, 'test_ch', '54', 'Buyer', '546', '2021-12-13 21:04:20', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (1, 'Administrator', '12345678', 'Administrator', '1234678910', '2021-12-13 18:03:48', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (2, 'seller', '123', 'Seller', '4585646', '2021-12-13 18:33:08', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (3, 'storekeeper', '456', 'StoreKeeper', '5415634', '2021-12-13 18:34:21', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (4, 'buyer', '789', 'Buyer', '54541', '2021-12-13 18:35:01', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (5, 'inspector', '101112', 'Inspector', '515158', '2021-12-13 18:35:35', null);
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (6, 'test_del', '544864', 'Deleted', '5546', '2021-12-13 20:58:49', '2021-12-13 20:58:53');
+INSERT INTO `jxc manage system`.user_info_t (Uno, Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES (7, 'test_ch', '54', 'Buyer', '546', '2021-12-13 21:04:20', null);
 
 -- From File: Insert_user_changebackup.sql
 INSERT INTO `jxc manage system`.user_changebackup_t (CHno, CHtype, CHtime, Creator_Uno, Involved_Uno, BeforeType, AfterType) VALUES (1, 'Add', '2021-12-13 18:03:48', 1, 1, 'null', 'Administrator');

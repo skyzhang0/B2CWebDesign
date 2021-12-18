@@ -22,8 +22,8 @@ create table `jxc manage system`.user_changebackup_t
     BeforeType   varchar(50)        null comment '变更前职工类型',
     AfterType    varchar(50)        not null comment '变更后职工类型',
     constraint User_changeBackup_T_userinfo_t_Uno_fk_1
-        foreign key (Creator_Uno) references userinfo_t (Uno),
+        foreign key (Creator_Uno) references user_info_t (Uno),
     constraint User_changeBackup_T_userinfo_t_Uno_fk_2
-        foreign key (Involved_Uno) references userinfo_t (Uno)
+        foreign key (Involved_Uno) references user_info_t (Uno)
 )
     comment '人员变更记录表';

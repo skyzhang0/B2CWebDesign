@@ -6,11 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="Servlet.UserServlet.UserServlet" %>
 <html>
-<head>
-  <title>Title</title>
-</head>
 <body>
+
+<% UserServlet.register(request, response);%>
 
 </body>
 </html>

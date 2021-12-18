@@ -10,7 +10,7 @@
       <a href="${pageContext.request.contextPath}/index.jsp" class="h1">进销存管理系统</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">好久不见，请登录！</p>
+      <p class="login-box-msg">请输入新手机号</p>
       <%
         // 对传入的url错误参数进行处理
         String err = request.getParameter("err");
@@ -22,43 +22,21 @@
           out.println("</div>");
         }
       %>
-      <form action="${pageContext.request.contextPath}/pages/Processes/loginProcess.jsp" method="post">
+      <form action="${pageContext.request.contextPath}/pages/Processes/changePhone.jsp" method="post">
         <div class="input-group mb-3">
-          <input type="text" name="username" class="form-control" placeholder="Username/Phone">
+          <input type="text" name="phone" class="form-control" placeholder="Phone">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <span class="fas fa-phone"></span>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" name="remember" id="remember">
-              <label for="remember">记住密码</label>
-            </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block">提交</button>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">登录</button>
-          </div>
-          <!-- /.col -->
         </div>
       </form>
-
-      <p class="mb-0">
-        没有账号？
-        <a href="${pageContext.request.contextPath}/pages/register.jsp" class="text-center">注册</a>
-      </p>
-
     </div>
     <!-- /.card-body -->
   </div>

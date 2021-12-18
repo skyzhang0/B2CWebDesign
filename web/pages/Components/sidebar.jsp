@@ -19,15 +19,7 @@
   <div class="sidebar">
     <!-- 用户头像栏 -->
     <!-- 此处应有jsp -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <img src="${pageContext.request.contextPath}/dist/img/user.png" class="img-circle elevation-2"
-             alt="User Image">
-      </div>
-      <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
-      </div>
-    </div>
+    <%@include file="/pages/Parts/user_panel.jsp" %>
 
     <!-- 侧边栏总菜单 -->
     <nav class="mt-2">

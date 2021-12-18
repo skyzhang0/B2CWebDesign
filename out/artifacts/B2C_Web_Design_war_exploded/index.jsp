@@ -39,10 +39,22 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+    <%-- 此处没有登录显示登录注册选项，已登录显示用户信息 --%>
+
+    <%
+      String inc_content = "";
+      user = (User) session.getAttribute("user");
+      if (user == null) {
+        inc_content = "/pages/Parts/login_comment_card.jsp";
+      } else {
+        inc_content = "/pages/Parts/user_info_card.jsp";
+      }
+    %>
+
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <%@include file="/pages/Parts/login_comment_card.jsp" %>
+          <jsp:include page="<%=inc_content%>"/>
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

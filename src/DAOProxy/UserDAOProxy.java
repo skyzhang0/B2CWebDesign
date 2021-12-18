@@ -35,6 +35,7 @@ public class UserDAOProxy implements UserDAO {
 
     @Override
     public boolean doUpdate(User user) throws SQLException {
+        // 如果改变了用户的权限要对用户变动记录表也进行改动
         return userDAO.doUpdate(user);
     }
 
@@ -46,11 +47,22 @@ public class UserDAOProxy implements UserDAO {
         Date date_now = new Date(System.currentTimeMillis());
         user.setType("None");
         user.setCancellation_date(date_now);
+        // 同时此处需要对用户变更记录表进行改动
         return userDAO.doUpdate(user);
     }
 
     @Override
     public boolean doInsert(User user) throws SQLException {
+        // 在新建用户时设置注册时间为当前时间
+        if (user.getRegister_date() == null) {
+            Date date = new Date(System.currentTimeMillis());
+            user.setRegister_date(date);
+        }
+        // 同时若无权限则设置用户初始类型为None
+        if (user.getType() == null || user.getType().isEmpty()) {
+            user.setType("None");
+        }
+        // 同时对用户变更记录表进行改动
         return userDAO.doInsert(user);
     }
 }

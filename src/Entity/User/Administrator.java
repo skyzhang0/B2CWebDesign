@@ -9,9 +9,8 @@ public class Administrator extends User {
         super();
     }
 
-    public Administrator(int number, String name, String password, String type,
-                         String phone, Date register_date,
-                         Date cancellation_date
+    public Administrator(int number, String name, String password, String type, String phone,
+                         Date register_date, Date cancellation_date
     ) {
         super(number, name, password, type, phone, register_date, cancellation_date);
     }
@@ -40,11 +39,4 @@ public class Administrator extends User {
         // TODO
         return false;
     }
-
-    public User findUser() {
-        //TODO
-        return null;
-    }
-
-
 }
