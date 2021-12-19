@@ -1,4 +1,4 @@
-create table `jxc manage system`.userinfo_t
+create table `jxc manage system`.user_info
 (
     Uno                int auto_increment comment '职工编号'
         primary key,
@@ -7,23 +7,26 @@ create table `jxc manage system`.userinfo_t
     Utype              varchar(50) not null comment '职工的类型，例如"售货员"，"验收员"',
     Uphone             varchar(20) null comment '职工的联系方式，手机号码',
     Uregister_date     datetime    not null comment '职工账户创建日期',
-    Ucancellation_date datetime    null comment '职工的账户注销日期'
+    Ucancellation_date datetime    null comment '职工的账户注销日期',
+    constraint userinfo_t_Uname_uindex
+        unique (Uname)
 )
     comment '用户信息表';
 
-create table `jxc manage system`.user_changebackup_t
+create table `jxc manage system`.user_changebackup
 (
-    CHno         int auto_increment not null comment '变更编号'
+    CHno         int auto_increment comment '变更编号'
         primary key,
-    CHtype       varchar(50)        not null comment '变更类型，"删除","新建","授权"等',
-    CHtime       datetime           not null comment '变更提交时间',
-    Creator_Uno  int                not null comment '发起者的职工编号',
-    Involved_Uno int                not null comment '涉及（被改变）的职工编号',
-    BeforeType   varchar(50)        null comment '变更前职工类型',
-    AfterType    varchar(50)        not null comment '变更后职工类型',
+    CHtype       varchar(50) not null comment '变更类型，"删除","新建","授权"等',
+    CHtime       datetime    not null comment '变更提交时间',
+    Creator_Uno  int         not null comment '发起者的职工编号',
+    Involved_Uno int         not null comment '涉及（被改变）的职工编号',
+    BeforeType   varchar(50) null comment '变更前职工类型',
+    AfterType    varchar(50) not null comment '变更后职工类型',
     constraint User_changeBackup_T_userinfo_t_Uno_fk_1
-        foreign key (Creator_Uno) references user_info_t (Uno),
+        foreign key (Creator_Uno) references `jxc manage system`.user_info (Uno),
     constraint User_changeBackup_T_userinfo_t_Uno_fk_2
-        foreign key (Involved_Uno) references user_info_t (Uno)
+        foreign key (Involved_Uno) references `jxc manage system`.user_info (Uno)
 )
     comment '人员变更记录表';
+

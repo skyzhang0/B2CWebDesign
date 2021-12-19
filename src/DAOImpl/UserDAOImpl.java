@@ -18,7 +18,7 @@ public class UserDAOImpl implements UserDAO {
 
     // 根据用户编号查询用户，返回用户类
     public User findByNumber(int number) throws SQLException {
-        String sql = "SELECT * FROM `jxc manage system`.user_info_t WHERE Uno=?;";
+        String sql = "SELECT * FROM `jxc manage system`.user_info WHERE Uno=?;";
         ppstmt = conn.prepareStatement(sql);
         ppstmt.setInt(1, number);
         ResultSet rs = ppstmt.executeQuery();
@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public User findByName(String name) throws SQLException {
-        String sql = "SELECT * FROM `jxc manage system`.user_info_t WHERE Uname = ?";
+        String sql = "SELECT * FROM `jxc manage system`.user_info WHERE Uname = ?";
         ppstmt = conn.prepareStatement(sql);
         ppstmt.setString(1, name);
         ResultSet rs = ppstmt.executeQuery();
@@ -45,7 +45,7 @@ public class UserDAOImpl implements UserDAO {
 
     public List<User> findAll() throws SQLException {
         List<User> res = new Vector<>();
-        String sql = "SELECT * FROM `jxc manage system`.user_info_t";
+        String sql = "SELECT * FROM `jxc manage system`.user_info";
         ppstmt = conn.prepareStatement(sql);
         ResultSet rs = ppstmt.executeQuery();
         while (rs.next()) {
@@ -55,8 +55,8 @@ public class UserDAOImpl implements UserDAO {
         return res;
     }
 
-    public boolean doUpdate(User user) throws SQLException {
-        String sql = "UPDATE `jxc manage system`.user_info_t SET Uname = ?, Upassword = ?, Utype = ?,Uphone = ?, Uregister_date = ?, Ucancellation_date = ? WHERE Uno = ?;";
+    public boolean doUpdate(User user, User creator) throws SQLException {
+        String sql = "UPDATE `jxc manage system`.user_info SET Uname = ?, Upassword = ?, Utype = ?,Uphone = ?, Uregister_date = ?, Ucancellation_date = ? WHERE Uno = ?;";
         ppstmt = conn.prepareStatement(sql);
         ppstmt.setString(1, user.getName());
         ppstmt.setString(2, user.getPassword());
@@ -75,8 +75,8 @@ public class UserDAOImpl implements UserDAO {
         return state;
     }
 
-    public boolean doDelete(User user) throws SQLException {
-        String sql = "DELETE FROM `jxc manage system`.user_info_t WHERE Uno= ?;";
+    public boolean doDelete(User user, User creator) throws SQLException {
+        String sql = "DELETE FROM `jxc manage system`.user_info WHERE Uno= ?;";
         ppstmt = conn.prepareStatement(sql);
         ppstmt.setInt(1, user.getNumber());
         boolean state = true;
@@ -90,8 +90,8 @@ public class UserDAOImpl implements UserDAO {
     }
 
     // 将传入的用户插入数据库，如果插入成功返回true，否则返回false
-    public boolean doInsert(User user) throws SQLException {
-        String sql = "INSERT INTO `jxc manage system`.user_info_t (Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES ( ?, ?, ?, ?, ?, ?);";
+    public boolean doInsert(User user, User creator) throws SQLException {
+        String sql = "INSERT INTO `jxc manage system`.user_info (Uname, Upassword, Utype, Uphone, Uregister_date, Ucancellation_date) VALUES ( ?, ?, ?, ?, ?, ?);";
         ppstmt = conn.prepareStatement(sql);
         ppstmt.setString(1, user.getName());
         ppstmt.setString(2, user.getPassword());
