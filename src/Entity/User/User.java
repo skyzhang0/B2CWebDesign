@@ -23,8 +23,8 @@ public class User {
         this.cancellation_date = null;
     }
 
-    public User(int number, String name, String password, String type,
-                String phone, Date register_date, Date cancellation_date
+    public User(int number, String name, String password, String type, String phone,
+                Date register_date, Date cancellation_date
     ) {
         this.number = number;
         this.name = name;
@@ -59,6 +59,32 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "number=" + number + ", name='" + name + '\'' + ", password='" + password + '\'' + ", type='" + type + '\'' + ", phone='" + phone + '\'' + ", register_date=" + register_date + ", cancellation_date=" + cancellation_date + '}';
+    }
+
+    public String toHTMLTableRow() {
+        String res = "";
+        res += "<tr>\n";
+        res += "<td>" + number + "</td>";
+        res += "<td>" + (name != null ? name : "null") + "</td>";
+        res += "<td>" + (type != null ? type : "null") + "</td>";
+        res += "<td>" + (phone != null ? phone : "null") + "</td>";
+        res += "<td>" + (register_date != null ? register_date : "null") + "</td>";
+        res += "<td>" + (cancellation_date != null ? cancellation_date : "null") + "</td>";
+        res += "</tr>\n";
+        return res;
+    }
+
+    public static String getHTMLTableHeader() {
+        String res = "";
+        res += "<thead>\n<tr>\n";
+        res += "<th>" + "用户编号" + "</th>";
+        res += "<th>" + "用户名" + "</th>";
+        res += "<th>" + "用户类型" + "</th>";
+        res += "<th>" + "用户手机号" + "</th>";
+        res += "<th>" + "用户注册时间" + "</th>";
+        res += "<th>" + "用户注销时间" + "</th>";
+        res += "</tr>\n</thead>\n";
+        return res;
     }
 
     public String getName() {

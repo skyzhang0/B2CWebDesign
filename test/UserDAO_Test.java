@@ -29,19 +29,19 @@ public class UserDAO_Test {
         System.out.println("number = " + number2 + ", " + dao.findByNumber(number2));
 
         System.out.println("测试插入操作：");
-        System.out.println(dao.doInsert(user1));
-        dao.doInsert(user2);
+        System.out.println(dao.doInsert(user1, user1));
+        dao.doInsert(user2, user1);
         res = dao.findAll();
         TestUtils.printAll(res);
 
         System.out.println("测试修改操作：");
-        dao.doUpdate(user3);
+        dao.doUpdate(user3, user1);
         mysql_conn.commit();
         res = dao.findAll();
         TestUtils.printAll(res);
 
         System.out.println("测试删除操作：");
-        dao.doDelete(user3);
+        dao.doDelete(user3, user1);
         mysql_conn.commit();
         res = dao.findAll();
         TestUtils.printAll(res);

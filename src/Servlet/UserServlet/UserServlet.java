@@ -13,6 +13,8 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserServlet extends HttpServlet {
     public static boolean login(HttpServletRequest request, HttpServletResponse response)
@@ -126,7 +128,7 @@ public class UserServlet extends HttpServlet {
         user.setName(username);
         user.setPassword(password);
         user.setPhone(phone);
-        if (!DAOFactory.getUserDAOInstance().doInsert(user)) {
+        if (!DAOFactory.getUserDAOInstance().doInsert(user, user)) {
             String url = abs_register + "?err=" + URLEncoder.encode("未知错误，请联系管理员", StandardCharsets.UTF_8);
             response.sendRedirect(url);
             return false;
@@ -186,7 +188,7 @@ public class UserServlet extends HttpServlet {
 
         // 修改user将数据插入数据库
         user.setPassword(password);
-        if (!DAOFactory.getUserDAOInstance().doUpdate(user)) {
+        if (!DAOFactory.getUserDAOInstance().doUpdate(user, user)) {
             String url = abs_changePassword + "?err=" + URLEncoder.encode("未知错误，请联系网站管理员", StandardCharsets.UTF_8);
             response.sendRedirect(url);
             return false;
@@ -237,7 +239,7 @@ public class UserServlet extends HttpServlet {
         }
         // 对数据库中的用户进行更新
         user.setName(username);
-        if (!DAOFactory.getUserDAOInstance().doUpdate(user)) {
+        if (!DAOFactory.getUserDAOInstance().doUpdate(user, user)) {
             String url = abs_changeUsername + "?err=" + URLEncoder.encode("未知错误，请联系网站管理员", StandardCharsets.UTF_8);
             response.sendRedirect(url);
             return false;
@@ -279,7 +281,7 @@ public class UserServlet extends HttpServlet {
 
         // 修改user将数据插入数据库
         user.setPhone(phone);
-        if (!DAOFactory.getUserDAOInstance().doUpdate(user)) {
+        if (!DAOFactory.getUserDAOInstance().doUpdate(user, user)) {
             String url = abs_changePhone + "?err=" + URLEncoder.encode("未知错误，请联系网站管理员", StandardCharsets.UTF_8);
             response.sendRedirect(url);
             return false;
@@ -288,6 +290,36 @@ public class UserServlet extends HttpServlet {
         // 插入成功，修改session中user，重定向到index
         session.setAttribute("user", user);
         response.sendRedirect(abs_index);
+        return true;
+    }
+
+    public static boolean find(HttpServletRequest request, HttpServletResponse response)
+            throws IOException, SQLException, ClassNotFoundException {
+        ServletContext application = request.getServletContext(); // 获取application对象
+        HttpSession session = request.getSession(); // 获取session对象
+        String abs_login = request.getContextPath() + "/pages/login.jsp";
+        String abs_register = request.getContextPath() + "/pages/register.jsp";
+        String abs_index = request.getContextPath() + "/index.jsp";
+        String abs_personnel_add = request.getContextPath() + "/pages/ManagePages/personnel_manage/add.jsp";
+        String abs_personnel_delete = request.getContextPath() + "/pages/ManagePages/personnel_manage/delete.jsp";
+        String abs_personnel_find = request.getContextPath() + "/pages/ManagePages/personnel_manage/find.jsp";
+        String abs_personnel_update = request.getContextPath() + "/pages/ManagePages/personnel_manage/update.jsp";
+
+        String name = request.getParameter("name");
+
+        // 删除原来的查询结果
+        session.removeAttribute("user_list");
+        // 结果list
+        List<User> user_list;
+        // 检查信息是否有输入，如果没有则查找所有用户
+        if (name == null || name.isEmpty()) {
+            user_list = DAOFactory.getUserDAOInstance().findAll();
+        } else {
+            user_list = new ArrayList<>();
+            user_list.add(DAOFactory.getUserDAOInstance().findByName(name));
+        }
+        session.setAttribute("user_list", user_list);
+        response.sendRedirect(abs_personnel_find);
         return true;
     }
 }

@@ -16,8 +16,8 @@ public class Combine_Scripts {
         List<Path> files = new ArrayList<>();
         files.add(Paths.get(Origin_sql_dir, "Define_DB.sql"));
         files.add(Paths.get(Origin_sql_dir, "Define_Table.sql"));
-        files.add(Paths.get(Origin_sql_dir, "Insert_userinfo.sql"));
-        files.add(Paths.get(Origin_sql_dir, "Insert_user_changebackup.sql"));
+        files.add(Paths.get(Origin_sql_dir, "jxc_manage_system_user_changebackup.sql"));
+        files.add(Paths.get(Origin_sql_dir, "jxc_manage_system_user_info.sql"));
 
         // 按顺序读入SQL脚本并按行存储在List中，同时加入部分提示语句
         List<String> lines = new ArrayList<>();

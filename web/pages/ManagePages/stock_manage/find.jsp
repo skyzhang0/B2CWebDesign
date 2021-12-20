@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: qwe22
-  Date: 2021-12-17
-  Time: 12:04
+  Date: 2021-12-19
+  Time: 15:45
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -37,23 +37,10 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
-    <%-- 此处没有登录显示登录注册选项，已登录显示用户信息 --%>
-
-    <%
-      String inc_content;
-      user = (User) session.getAttribute("user");
-      if (user == null) {
-        inc_content = "/pages/Parts/login_comment_card.jsp";
-      } else {
-        inc_content = "/pages/Parts/user_info_card.jsp";
-      }
-    %>
-
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <jsp:include page="<%=inc_content%>"/>
+          <%--          todo --%>
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

@@ -16,11 +16,11 @@ public interface UserDAO {
     List<User> findAll() throws SQLException;
 
     // 更新用户信息，成功返回true，否则返回false
-    boolean doUpdate(User user) throws SQLException;
+    boolean doUpdate(User user,User creator) throws SQLException, ClassNotFoundException;
 
     // 删除用户信息，成功返回true，否则返回false
-    boolean doDelete(User user) throws SQLException;
+    boolean doDelete(User user,User creator) throws SQLException, ClassNotFoundException;
 
     // 插入用户信息，成功返回true，否则返回false
-    boolean doInsert(User user) throws SQLException;
+    boolean doInsert(User user,User creator) throws SQLException, ClassNotFoundException;
 }

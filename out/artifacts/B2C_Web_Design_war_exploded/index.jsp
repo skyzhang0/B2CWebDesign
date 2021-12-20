@@ -28,7 +28,6 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Starter Page</li>
             </ol>
@@ -42,7 +41,7 @@
     <%-- 此处没有登录显示登录注册选项，已登录显示用户信息 --%>
 
     <%
-      String inc_content = "";
+      String inc_content;
       user = (User) session.getAttribute("user");
       if (user == null) {
         inc_content = "/pages/Parts/login_comment_card.jsp";
