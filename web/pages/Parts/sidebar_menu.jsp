@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="Entity.User.*" %>
 
-<li class="nav-item">
-  <a href="${pageContext.request.contextPath}/index.jsp" class="nav-link">
+<li class="nav-item" >
+  <a href="${pageContext.request.contextPath}/index.jsp" class="nav-link" id="user_info">
     <i class="nav-icon fas fa-th"></i>
     <p>
       个人信息

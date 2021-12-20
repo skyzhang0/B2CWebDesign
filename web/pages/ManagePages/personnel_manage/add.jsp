@@ -28,8 +28,8 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/index.jsp">主页</a></li>
+              <li class="breadcrumb-item active">添加用户</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -107,6 +107,16 @@
   <%@include file="/pages/Components/footer.jsp" %>
 </div>
 <%-- wapper --%>
+
+<script>
+    // 修改菜单的active
+    var ori_class_name = document.getElementById("personnel_submenu").className;
+    document.getElementById("personnel_submenu").className = ori_class_name + " menu-open";
+    ori_class_name = document.getElementById("personnel_submenu_head").className;
+    document.getElementById("personnel_submenu_head").className = ori_class_name + " active";
+    ori_class_name = document.getElementById("person_add").className;
+    document.getElementById("person_add").className = ori_class_name + " active";
+</script>
 
 <%-- js框架支持 --%>
 <%@include file="/pages/Components/script_require.jsp" %>

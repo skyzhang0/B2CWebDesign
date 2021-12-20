@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <li class="nav-item">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-tachometer-alt"></i>
+    <i class="nav-icon fas fa-fax"></i>
     <p>
       订货管理
       <i class="right fas fa-angle-left"></i>

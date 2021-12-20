@@ -28,8 +28,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item">主页</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -67,6 +66,12 @@
   <%@include file="/pages/Components/footer.jsp" %>
 </div>
 <%-- wapper --%>
+
+<script>
+    // 修改菜单的active
+    const ori_class_name = document.getElementById("user_info").className;
+    document.getElementById("user_info").className = ori_class_name + " active";
+</script>
 
 <%-- js框架支持 --%>
 <%@include file="/pages/Components/script_require.jsp" %>
