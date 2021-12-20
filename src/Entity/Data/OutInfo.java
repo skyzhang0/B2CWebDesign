@@ -38,7 +38,7 @@ public class OutInfo {
         out_date = rs.getDate("OutStockDate");
     }
 
-    // todo
+
     public String toHTMLTableRow() {
         String res = "";
         res += "<tr>\n";

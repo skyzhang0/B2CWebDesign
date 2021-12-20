@@ -43,7 +43,6 @@ public class WareInfo {
         quality = rs.getDouble("Wquality");
     }
 
-    // todo
     public String toHTMLTableRow() {
         String res = "";
         res += "<tr>\n";

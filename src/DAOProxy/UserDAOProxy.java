@@ -4,6 +4,7 @@ import DAO.UserChangeBkDAO;
 import DAO.UserDAO;
 import DAOImpl.UserChangeBkDAOImpl;
 import DAOImpl.UserDAOImpl;
+import DBConnection.DatabaseConnection;
 import DBConnection.MysqlConnection;
 import Entity.Data.UserChangeBackup;
 import Entity.User.User;
@@ -14,8 +15,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserDAOProxy implements UserDAO {
-    MysqlConnection conn;
-    UserDAOImpl userDAO;
+    DatabaseConnection conn;
+    UserDAO userDAO;
 
     public UserDAOProxy() throws SQLException, ClassNotFoundException {
         conn = new MysqlConnection();

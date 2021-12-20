@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Vector;
 
 public class UserChangeBkDAOImpl implements UserChangeBkDAO {
-    private Connection conn;
+    private final Connection conn;
     private PreparedStatement ppstmt; // 资源句柄
 
     // 构造函数，由DAOProxy调用，conn传入DBConnection返回的数据库连接

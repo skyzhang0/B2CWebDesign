@@ -37,7 +37,6 @@ public class StockInfo {
         monthly_storage_cost = rs.getInt("SMonthlyStorageCost");
     }
 
-    // todo
     public String toHTMLTableRow() {
         String res = "";
         res += "<tr>\n";
