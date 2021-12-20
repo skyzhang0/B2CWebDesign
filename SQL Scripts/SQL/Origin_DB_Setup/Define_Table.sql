@@ -1,3 +1,77 @@
+create table `jxc manage system`.goods_info
+(
+    Gno                     int auto_increment
+        primary key,
+    Gunit                   char(10)  null,
+    Gname                   char(100) null,
+    Gnum                    int       null,
+    Gprice                  float     null,
+    GqualityGuaranteePeriod char(10)  null,
+    GDateOfProduction       date      null,
+    GDueDate                date      null,
+    Gkind                   char(10)  null,
+    Gprofit                 float     null
+);
+
+create table `jxc manage system`.check_info
+(
+    Kno      int auto_increment
+        primary key,
+    Gno      int        null,
+    Knum     int        null,
+    Kqual    tinyint(1) null,
+    Kdate    date       null,
+    Kquality float      null,
+    constraint check_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
+
+create table `jxc manage system`.order_info
+(
+    Ono      int auto_increment
+        primary key,
+    Gno      int   null,
+    Onum     int   null,
+    Oprice   float null,
+    Odate    date  null,
+    Oquality float null,
+    constraint order_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
+
+create table `jxc manage system`.out_info
+(
+    Ouno         int auto_increment
+        primary key,
+    Gno          int  null,
+    Onum         int  null,
+    OutStockDate date null,
+    constraint out_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
+
+create table `jxc manage system`.sell_info
+(
+    SLno   int auto_increment
+        primary key,
+    Gno    int  null,
+    SLnum  int  null,
+    SLtime date null,
+    constraint sell_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
+
+create table `jxc manage system`.stock_info
+(
+    Sno                 int auto_increment
+        primary key,
+    Gno                 int   null,
+    Snum                int   null,
+    SMonthlyStorageCost float null,
+    constraint stock_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
+
 create table `jxc manage system`.user_info
 (
     Uno                int auto_increment comment '职工编号'
@@ -29,4 +103,16 @@ create table `jxc manage system`.user_changebackup
         foreign key (Involved_Uno) references `jxc manage system`.user_info (Uno)
 )
     comment '人员变更记录表';
+
+create table `jxc manage system`.ware_info
+(
+    Wno         int auto_increment
+        primary key,
+    Gno         int   null,
+    Wnum        int   null,
+    WArriveDate date  null,
+    Wquality    float null,
+    constraint ware_info_goods_info_Gno_fk
+        foreign key (Gno) references `jxc manage system`.goods_info (Gno)
+);
 

@@ -45,6 +45,36 @@ public class UserChangeBackup {
         setAfter_type(rs.getString("AfterType"));
     }
 
+
+    public String toHTMLTableRow() {
+        String res = "";
+        res += "<tr>\n";
+        res += "<td>" + number + "</td>";
+        res += "<td>" + (type != null ? type : "null") + "</td>";
+        res += "<td>" + (time != null ? time : "null") + "</td>";
+        res += "<td>" + creator_number + "</td>";
+        res += "<td>" + involved_number + "</td>";
+        res += "<td>" + (before_type != null ? before_type : "null") + "</td>";
+        res += "<td>" + (after_type != null ? after_type : "null") + "</td>";
+        res += "</tr>\n";
+        return res;
+    }
+
+    public String getHTMLHeader() {
+        String res = "";
+        res += "<thead>\n<tr>\n";
+        res += "<th>" + "变更编号" + "</th>";
+        res += "<th>" + "变更类型" + "</th>";
+        res += "<th>" + "变更时间" + "</th>";
+        res += "<th>" + "发起职工编号" + "</th>";
+        res += "<th>" + "涉及职工编号" + "</th>";
+        res += "<th>" + "变更前类型" + "</th>";
+        res += "<th>" + "变更后类型" + "</th>";
+        res += "</tr>\n</thead>\n";
+        return res;
+    }
+// todo 添加用户变动记录的查询删除等功能
+
     public int getNumber() {
         return number;
     }

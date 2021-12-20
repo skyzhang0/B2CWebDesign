@@ -1,0 +1,13 @@
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (1, 1, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (2, 2, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (3, 4, 10, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (4, 5, 30, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (5, 6, 10, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (6, 8, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (7, 11, 10, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (8, 12, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (9, 15, 30, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (10, 16, 10, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (11, 17, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (12, 19, 20, '2021-12-13');
+INSERT INTO `jxc manage system`.out_info (Ouno, Gno, Onum, OutStockDate) VALUES (13, 20, 30, '2021-12-13');

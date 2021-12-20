@@ -1,0 +1,11 @@
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (1, 1, 2, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (2, 3, 5, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (3, 4, 5, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (4, 5, 2, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (5, 9, 5, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (6, 12, 10, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (7, 13, 10, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (8, 15, 2, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (9, 17, 4, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (10, 18, 8, '2021-12-18');
+INSERT INTO `jxc manage system`.sell_info (SLno, Gno, SLnum, SLtime) VALUES (11, 19, 5, '2021-12-18');
